@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var messageTextField: UITextField!
 	@IBOutlet weak var sendMailButton: UIButton!
-
+	@IBOutlet weak var nameLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -30,11 +30,15 @@ class ViewController: UIViewController {
 	@IBAction func sendMailButtonPressed(sender: UIButton) {
 
 		messageLabel.text = messageTextField.text
-		messageLabel.hidden = false
 		messageLabel.textColor = UIColor.redColor()
+		messageLabel.hidden = false
 
+		nameLabel.text = nameTextField.text
+		nameLabel.textColor = UIColor.blueColor()
+		nameLabel.hidden = false
 
 		// clear message details
+		nameTextField.text = ""
 		messageTextField.text = ""
 
 		// hide keyboard
